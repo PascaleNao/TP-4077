@@ -1,0 +1,163 @@
+/* src/styles/app.css */
+:root {
+    --color-primary: #007ACC;
+    /* Bleu de Confiance */
+    --color-secondary: #28A745;
+    /* Vert Apaisant */
+    --color-background: #F8F9FA;
+    /* Gris Tendre */
+    --color-text: #343A40;
+    --color-light: #FFFFFF;
+    --color-danger: #DC3545;
+    --color-accent: #17A2B8;
+    /* Cyan pour les liens */
+    --font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Styles pour les conteneurs de page */
+.page-container {
+    flex-grow: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Cartes et panneaux (utilisé pour les formulaires et les données) */
+.card {
+    background-color: var(--color-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+/* Titres */
+h1,
+h2,
+h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+/* Formulaires et entrées */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CED4DA;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 204, 0.25);
+}
+
+/* Boutons de base */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--color-primary), 10%);
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-light);
+}
+
+.btn-secondary:hover {
+    background-color: darken(var(--color-secondary), 10%);
+}
+
+.btn-danger {
+    background-color: var(--color-danger);
+    color: var(--color-light);
+}
+
+/* Liens de navigation */
+.nav-link {
+    color: var(--color-light);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Styles spécifiques au tableau de bord */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Styles pour les alertes/messages */
+.alert {
+    padding: 15px;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.alert-error {
+    background-color: rgba(220, 53, 69, 0.1);
+    /* Rouge très léger */
+    color: var(--color-danger);
+    border: 1px solid var(--color-danger);
+}
+
+.alert-success {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
+}
