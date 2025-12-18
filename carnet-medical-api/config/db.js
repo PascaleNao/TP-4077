@@ -11,13 +11,19 @@ const pool = mysql.createPool({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
+    port: process.env.DB_PORT || 3306, // 🚨 Indispensable pour interroger le port 23851
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
 
-    // NOUVELLE OPTION DE COMPATIBILITÉ (pour usage développement local)
-    insecureAuth: true
+
+    // 🚨 CONFIGURATION SSL POUR LA PÉRENNITÉ DU FLUX
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
+
+
 
 // 3. TEST IMMÉDIAT DE LA CONNEXION AU POOL
 pool.getConnection()
